@@ -5,8 +5,8 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.revature</groupId>
-    <artifactId>quizzard</artifactId>
+    <groupId>hingst.bank</groupId>
+    <artifactId>Fred_Hingst_p0</artifactId>
     <version>1.0.0</version>
 
     <properties>
