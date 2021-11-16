@@ -27,31 +27,24 @@ public class RegisterScreen extends Screen{
         System.out.print("Last name: ");
         String lastName = consoleReader.readLine();
 
-        System.out.print("Email: ");
-        String email = consoleReader.readLine();
-
-        System.out.print("Username: ");
-        String username = consoleReader.readLine();
 
         System.out.print("Password: ");
         String password = consoleReader.readLine();
 
-        System.out.printf("Provided user first and last name: { \"firstName\": %s, \"lastName\": %s}\n", firstName, lastName);
+        System.out.printf("Provided customer first and last name: { \"firstName\": %s, \"lastName\": %s}\n", firstName, lastName);
         // String format specifiers: %s (strings), %d (whole numbers), %f (decimal values)
 
-        AppUser newUser = new AppUser(firstName, lastName, email, username, password);
 
-        try {
-            userService.registerNewUser(newUser);
-            System.out.println("Registration successful!");
-            router.navigate("/login");
-        } catch (InvalidRequestException | ResourcePersistenceException e) {
-            System.out.println(e.getMessage());
-        } catch (Exception e) {
-            // TODO log this unexpected exception to a file
-            e.printStackTrace();
+            System.out.println("Account located");
+
+         shutdown();
+
         }
 
 
+         private void shutdown(){
+
+         }
+
     }
-}
+

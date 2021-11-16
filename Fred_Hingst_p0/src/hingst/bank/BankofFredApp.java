@@ -2,6 +2,10 @@ package hingst.bank;
 
 import hingst.bank.util.AppState;
 import hingst.bank.BankofFred;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class BankofFredApp {
@@ -9,6 +13,8 @@ public class BankofFredApp {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
+        Properties props = new Properties();
+
 
         System.out.println("Please enter the number of accounts you want to inquire about: ");
         int number = scan.nextInt();
@@ -24,9 +30,18 @@ public class BankofFredApp {
 
         do {
             System.out.println("\nWelcome to the Bank of Fred");
-            System.out.println("Type in 1 to display the account details\n2 if you wish to search by account number\n3 if you desire to make a deposit\n4 to make a withdrawal\n5 to exit");
+            System.out.println("Type in 1 to display the account details\n2 if you wish to search by account number\n3 if you desire to make a deposit\n4 to make a withdrawal\n5 to go to bank transaction menu");
             System.out.println("Type choice now: ");
             choice = scan.nextInt();
+
+            ConnectionMaker(); {
+                try {
+                    props.load(new FileReader("src/resources/db.properties"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
 
             switch (choice) {
 
@@ -97,4 +112,7 @@ public class BankofFredApp {
         AppState app = new AppState();
         app.startup();
     }
-            }
+
+    private static void ConnectionMaker() {
+    }
+}

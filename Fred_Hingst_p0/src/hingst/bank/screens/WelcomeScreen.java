@@ -16,28 +16,31 @@ public class WelcomeScreen extends Screen{
     public void render() throws Exception {
 
         System.out.print("\nWELCOME TO BANK OF FRED\n" +
-                "1) Login\n" +
-                "2) Go to your account\n" +
-                "3) Exit\n" +
-                ">>>");
+                "Press 1 to open account\n" +
+                "Press 2 for your account\n" +
+                "Press 3 to exit the menu\n" +
+                "Enter choice here ->->->->");
 
         String userSelection = consoleReader.readLine();
 
         switch (userSelection) {
             case "1":
-                router.navigate("/login");
-                break;
-            case "2":
+                System.out.println("What sort of account?");
+                System.out.println("C for checking, or S for savings");
                 router.navigate("/register");
                 break;
+            case "2":
+                System.out.println("What is your account number?");
+                String acctNum = consoleReader.readLine();
+                System.out.println("Our system is experiencing difficulties");
+                break;
+            default:
+                System.out.println("Customer has entered an invalid selection\nPlease try again");
+
             case "3":
                 System.out.println("Exiting session");
                 shutdown();
-                break;
-            case "throw exception":
-                throw new RuntimeException(); // "throw" is used to explicitly throw an exception that will (hopefully) be handled elsewhere
-            default:
-                System.out.println("Customer has entered invalid selection");
+
         }
 
     }

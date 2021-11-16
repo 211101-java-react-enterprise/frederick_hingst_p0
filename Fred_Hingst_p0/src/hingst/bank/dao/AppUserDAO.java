@@ -140,4 +140,5 @@ public class AppUserDAO implements CrudDAO<AppUser>{
 
 
     public boolean removeById(String id){return false;}
-        }
+
+    }

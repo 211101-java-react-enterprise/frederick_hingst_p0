@@ -1,5 +1,7 @@
 package hingst.bank.util;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -20,12 +22,19 @@ public class ConnectionMaker {
         }
     }
 
+    private ConnectionMaker() {
+        try {
+            props.load(new FileReader("src/resources/db.properties"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static ConnectionMaker getInstance() {
         return connectionMaker;
     }
 
-    /**
-     */
+
     public Connection getConnection() {
 
         Connection conn = null;

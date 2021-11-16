@@ -54,7 +54,7 @@ public class BankofFred {
             acctBalance = acctBalance - amt;
             System.out.println("Your remaining balance after withdrawal is: $" + (dF.format(acctBalance)));
         } else {
-            System.out.println("Your balance is less than $" + amt + "\tPerhaps you should contact one of our loan specialists.  We are unable to process this transaction");
+            System.out.println("Your balance is less than $" + (dF.format(amt)) + "\tPerhaps you should contact one of our loan specialists.  We are unable to process this transaction");
         }
 
     }
